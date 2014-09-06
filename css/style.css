@@ -1,32 +1,50 @@
 body {
   background: #384047;
+  background: url(../img/hot-cold.jpg) no-repeat;
+  background-size: cover;
   font-family: sans-serif;
-  font-size: 10px
+  margin: 150px 0;
 }
-div {
-  background: #fff;
-  padding: 4em 4em 2em;
-  max-width: 400px;
-  margin: 100px auto 0;
-  box-shadow: 0 0 1em #222;
+#mainBox {
+  background: url(../img/wood2.jpg) no-repeat;
+  padding: 20px 20px;
+  max-width: 300px;
+  font-size: 18px;
+  margin: 10px auto 0;
   border-radius: 5px;
 }
+
+#statement {
+  text-align: center;
+  background: #fff;
+  background: url(../img/wood3.jpg) no-repeat;
+  font-size: 20px;
+  max-width: 400px;
+  margin: 10px auto 0;
+  border-radius: 5px;
+}
+
 p {
-  margin: 0 0 3em 0;
+  text-align: center;
+  color: black;
+  margin: 0 0 0 0;
   position: relative;
 }
 label {
+  text-align: center;
   display: block;
-  font-size: 1.6em;
+  font-size: 25px;
   margin: 0 0 .5em;
-  color: #333;
+  color: white;
 }
 input {
   display: block;
   box-sizing: border-box;
   width: 100%;
-  outline: none
+  margin: 10px 0;
 }
+
+
 #enternumber {
   background: #f5f5f5;
   border: 1px solid #e5e5e5;
@@ -36,18 +54,22 @@ input {
 }
 
 
+
 #submit,
 #restart {
   max-width: 40%;
-  background: #2F558E;
+  background: #5bff55;
   border-radius: 2px;
-  color: #fff;
-  font-size: 2em;
+  color: #000;
+  font-size:18px;
   line-height: 1.6em;
-  margin: 0 0 0 100px;
-  padding: 10px 0;
+  margin: 20px 0 0 90px;
+  padding: 5px 0;
   text-shadow: 0 1px #68B25B;
 
+}
+#restart {
+  background: #ff9641;
 }
 
 a {

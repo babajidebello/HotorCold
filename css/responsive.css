@@ -1,0 +1,20 @@
+@media screen and (max-width: 1035px) {
+
+	body {
+		background-image: url(../img/wood3.jpg);
+		background-size: cover;
+	}
+
+	#mainBox {
+		background-image: url(../img/wood1.jpg);
+		background-size: cover;	
+	}
+
+	#statement {
+		background-image: url(../img/plank.png);
+	}
+
+	label {
+		color: #000;
+	}
+}
