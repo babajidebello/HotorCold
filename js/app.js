@@ -9,7 +9,7 @@ $('#restart').click(function(event){
 
 var randomNum=Math.ceil(Math.random()*100);
 
-// checking for the validity of the number inputed
+// checking for the validity of the input
 
 
 var numValidity= function(){

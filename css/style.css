@@ -1,3 +1,4 @@
+
 body {
   background: #384047;
   background: url(../img/hot-cold.jpg) no-repeat;
@@ -5,6 +6,7 @@ body {
   font-family: sans-serif;
   margin: 150px 0;
 }
+
 #mainBox {
   background: url(../img/wood2.jpg) no-repeat;
   padding: 20px 20px;
@@ -30,6 +32,7 @@ p {
   margin: 0 0 0 0;
   position: relative;
 }
+
 label {
   text-align: center;
   display: block;
@@ -37,6 +40,7 @@ label {
   margin: 0 0 .5em;
   color: white;
 }
+
 input {
   display: block;
   box-sizing: border-box;
