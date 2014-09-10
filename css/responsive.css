@@ -6,7 +6,7 @@
 	}
 
 	#mainBox {
-		background-image: url(../img/wood1.jpg);
+		background-image: url(../img/wood2.jpg);
 		background-size: cover;	
 	}
 
@@ -15,6 +15,6 @@
 	}
 
 	label {
-		color: #000;
+		color: #fff;
 	}
 }

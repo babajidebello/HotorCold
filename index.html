@@ -9,18 +9,23 @@
 	<div id="mainBox">
 		<p>
 			<label for="enternumber">Enter a Number to Play</label>
-			<input id="enternumber" name="number" type="text">
+			<input id="enternumber" name="number" type="text" maxlength="3">
 		</p>
 		<p>
 			<input type="submit" value="GUESS" id="submit">
 		</p>
 		<p>
-			<a href="index.html"><input type="submit" value="RESTART" id="restart"></a>
+			<a href="index.html"><input type="submit" value="NEW GAME" id="restart"></a>
 		</p>
 	</div>
 	<div id="statement">
 		<p></p>
 	</div>
+	<div id="container">
+		<div id="progressBar">
+		</div>
+	</div>
+
 	<script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/app.js" type="text/javascript" charset="utf-8"></script>
 </body>

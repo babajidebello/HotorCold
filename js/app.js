@@ -1,61 +1,82 @@
 // generating a random number from an array of [0-100]
-var enternumber;
-var initNum=0;
+var playGame= {
 
-$('#restart').click(function(event){
-	location.reload();
-});	
+	randomNum:0,
+	initNum:0,
+	enternumber:null,
+
+	initialize: function(){
+		playGame.randomNum = Math.ceil(Math.random()*100);
+		playGame.enternumber = $("#enternumber");
+		$('#submit').click(playGame.startGame); 
+		$('#restart').click(playGame.restartGame);
+	},
+
+	restartGame: function(){
+		location.reload();
+	},
 
 
-var randomNum=Math.ceil(Math.random()*100);
-
+	
 // checking for the validity of the input
 
 
-var numValidity= function(){
+	numValidity: function(enternumber){
 
-		enternumber = $("#enternumber").val();
-		
 		if((isNaN(enternumber)) || (enternumber === "")){
 			$("#statement p").html("Your have to input a number to play");
-		}
-		else if(enternumber===null){
-			$("#statement p").html("You have to input a number");
 		}
 		else if(0>enternumber){
 			$("#statement p").html("You have to input a positive number");
 		}
 		else if(enternumber>100){
-			$("#statement p").html("Your input is out of range");
+			$("#statement p").html("Your input is out of range, Please input any digit from 0-100. :)");
 		}
 		else{
-			hotorcold();
+			return true;
 		}
-}
-
-
+		return false;
+	},
 
 // the main operation
 
-var hotorcold= function(){
+	startGame: function(){
 
-		enternumber = parseInt(enternumber)
-
-		if(enternumber == randomNum){
+		var enternumber = parseInt(playGame.enternumber.val(),10);
+		if(!playGame.numValidity(enternumber))
+		{
+			return;
+		}
+		if(enternumber == playGame.randomNum){
 			$("#statement p").html("You are Correct");
+			$("#enternumber").val("");
 		}
-		else if(Math.abs(randomNum - enternumber) > Math.abs(randomNum - initNum)){
-			$("#statement p").html("Your number is colder");
+		else if(Math.abs(playGame.randomNum - enternumber) > Math.abs(playGame.randomNum - playGame.initNum)){
+			$("#statement p").html("Your number is cold");
+			$("#enternumber").val("");
 		}
-		else if(Math.abs(randomNum - enternumber) < Math.abs(randomNum - initNum)){
-			$("#statement p").html("Your number is hotter");
+		else if(Math.abs(playGame.randomNum - enternumber) < Math.abs(playGame.randomNum - playGame.initNum)){
+			$("#statement p").html("Your number is hot");
+			$("#enternumber").val("");
 		}
 
-		initNum = enternumber
-}
-console.log('randomNum: ' + randomNum);
+		playGame.initNum = enternumber;
+		playGame.progressBar();
+	},
+	
+	progressBar: function() {
 
-$('#submit').click(function(event) {
-	event.preventDefault;
-	numValidity();
-});
+		if (playGame.randomNum>50) {
+				bar= parseInt(100-((Math.abs(playGame.randomNum - playGame.initNum)/Math.abs(playGame.randomNum-0)) * 100));
+			}
+				else if (playGame.randomNum<50)  {
+					bar= parseInt(100-((Math.abs(playGame.randomNum - playGame.initNum)/Math.abs(playGame.randomNum-100)) * 100));
+				}
+
+			var barWidth = bar*$("#container").width()/ 100;  
+		    $("#progressBar").animate({width:barWidth},700).html(bar + "%");
+	},
+
+};
+
+$(document).ready(playGame.initialize);
