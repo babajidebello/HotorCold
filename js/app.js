@@ -48,15 +48,18 @@ var playGame= {
 			return;
 		}
 		if(enternumber == playGame.randomNum){
-			$("#statement p").html("You are Correct");
+			$("#statement p").html("Awesome...that was cool!");
+			$("label").text('Press "New Game" to Play Again.');
 			$("#enternumber").val("");
 		}
 		else if(Math.abs(playGame.randomNum - enternumber) > Math.abs(playGame.randomNum - playGame.initNum)){
 			$("#statement p").html("Your number is cold");
+			$("label").text('You\'re taking your eyes off the Ball!');
 			$("#enternumber").val("");
 		}
 		else if(Math.abs(playGame.randomNum - enternumber) < Math.abs(playGame.randomNum - playGame.initNum)){
 			$("#statement p").html("Your number is hot");
+			$("label").text('Almost there!');
 			$("#enternumber").val("");
 		}
 
