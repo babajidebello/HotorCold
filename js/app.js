@@ -13,7 +13,8 @@ var playGame= {
 	},
 
 	restartGame: function(){
-		location.reload();
+		playGame.randomNum();
+		$("#enternumber").val("");
 	},
 
 
